@@ -1,0 +1,68 @@
+{
+    "name": "zendframework/zend-expressive-authentication-oauth2-doctrine",
+    "description": "Doctrine data abstraction layer implementation for use with Zend Expressive Authentication OAuth2 library",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "support": {
+        "docs": "https://docs.zendframework.com/zend-expressive-authentication-oauth2-doctrine/",
+        "issues": "https://github.com/zendframework/zend-expressive-authentication-oauth2-doctrine/issues",
+        "source": "https://github.com/zendframework/zend-expressive-authentication-oauth2-doctrine",
+        "rss": "https://github.com/zendframework/zend-expressive-authentication-oauth2-doctrine/releases.atom",
+        "slack": "https://zendframework-slack.herokuapp.com",
+        "forum": "https://discourse.zendframework.com/c/questions/expressive"
+    },
+    "authors": [
+        {
+            "name": "Julien Guittard",
+            "email": "julien.guittard@me.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jguittard/zend-expressive-authentication-oauth2"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/orm": "^2.6",
+        "zendframework/zend-expressive-authentication-oauth2": "dev-feature/revokable-entities"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0.8",
+        "roave/security-advisories": "dev-master",
+        "zendframework/zend-coding-standard": "~1.0.0",
+        "zendframework/zend-diactoros": "^1.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Zend\\Expressive\\Authentication\\OAuth2\\Doctrine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "ZendTest\\Expressive\\Authentication\\OAuth2\\Doctrine\\": "test/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev",
+            "dev-release-1.0.0": "1.0.x-dev"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "generate-keys": "php bin/generate-keys.php"
+    }
+}
