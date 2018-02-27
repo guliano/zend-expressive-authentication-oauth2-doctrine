@@ -18,16 +18,10 @@
         }
     ],
     "minimum-stability": "alpha",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jguittard/zend-expressive-authentication-oauth2"
-        }
-    ],
     "require": {
         "php": "^7.1",
         "doctrine/orm": "^2.6",
-        "zendframework/zend-expressive-authentication-oauth2": "dev-feature/revokable-entities"
+        "zendframework/zend-expressive-authentication-oauth2": "^1.0.0alpha2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0.8",
