@@ -50,7 +50,7 @@ class ConfigProvider
                 Repository\ClientRepository::class => Repository\AbstractRepository::class,
                 Repository\RefreshTokenRepository::class => Repository\AbstractRepository::class,
                 Repository\ScopeRepository::class => Repository\AbstractRepository::class,
-                Repository\UserRepository::class => Repository\AbstractRepository::class,
+                Repository\UserRepository::class => Repository\UserRepositoryFactory::class,
             ],
         ];
     }

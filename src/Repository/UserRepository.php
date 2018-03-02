@@ -15,6 +15,16 @@ use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\UserEntity;
 class UserRepository extends AbstractRepository
     implements UserRepositoryInterface
 {
+    /**
+     * @var string
+     */
+    private $usernameField;
+
+    public function setUsernameField(string $usernameField): void
+    {
+        $this->usernameField = $usernameField;
+    }
+
     public function getUserEntityByUserCredentials(
         $username,
         $password,
@@ -23,7 +33,7 @@ class UserRepository extends AbstractRepository
     )
     {
         /** @var UserEntity $user */
-        $user = $this->objectRepository->findOneBy(compact('username'));
+        $user = $this->objectRepository->findOneBy([$this->usernameField => $username]);
 
         if (! $user) {
             return null;
