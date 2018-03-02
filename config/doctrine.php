@@ -1,13 +1,11 @@
 <?php
 
 return [
-    'doctrine' => [
-        'driver' => [
-            'orm_default' => [
-                'paths' => [
-                    'class' => Doctrine\ORM\Mapping\Driver\XmlDriver::class,
-                    __DIR__ . '/mapping/'
-                ],
+    'driver' => [
+        'orm_default' => [
+            'class' => Doctrine\ORM\Mapping\Driver\XmlDriver::class,
+            'paths' => [
+                realpath(__DIR__ . '/mapping/'),
             ],
         ],
     ],

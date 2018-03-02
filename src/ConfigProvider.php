@@ -26,6 +26,7 @@ class ConfigProvider
     {
         return [
             'dependencies'   => $this->getDependencies(),
+            'doctrine' => include __DIR__ . '/../config/doctrine.php',
             'oauth2_repository_mapping' => $this->getRepositoryMapping(),
         ];
     }
