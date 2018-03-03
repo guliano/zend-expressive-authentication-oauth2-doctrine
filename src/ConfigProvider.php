@@ -13,7 +13,7 @@ use League\OAuth2\Server\Repositories\AuthCodeRepositoryInterface;
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
 use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
-use Zend\Expressive\Authentication\UserRepositoryInterface;
+use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 use Zend\Expressive\Authentication\OAuth2\Entity as PdoEntity;
 use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity as DoctrineEntity;
 
