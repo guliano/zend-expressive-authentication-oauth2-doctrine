@@ -49,10 +49,10 @@ class UserRepositoryFactory
 
         $repository = new UserRepository(
             $em,
-            $em->getRepository($config['user_entity_class']),
-            $config['user_entity_class']
+            $em->getRepository($config['doctrine']['user_entity_class']),
+            $config['doctrine']['user_entity_class']
         );
-        $repository->setUsernameField($config['user_field'] ?? 'username');
+        $repository->setUsernameField($config['doctrine']['user_field'] ?? 'username');
 
         return $repository;
     }
