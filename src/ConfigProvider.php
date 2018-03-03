@@ -46,11 +46,11 @@ class ConfigProvider
                 UserRepositoryInterface::class => Repository\UserRepository::class,
             ],
             'factories' => [
-                Repository\AccessTokenRepository::class => Repository\AbstractRepository::class,
-                Repository\AuthCodeRepository::class => Repository\AbstractRepository::class,
-                Repository\ClientRepository::class => Repository\AbstractRepository::class,
-                Repository\RefreshTokenRepository::class => Repository\AbstractRepository::class,
-                Repository\ScopeRepository::class => Repository\AbstractRepository::class,
+                Repository\AccessTokenRepository::class => Repository\RepositoryFactory::class,
+                Repository\AuthCodeRepository::class => Repository\RepositoryFactory::class,
+                Repository\ClientRepository::class => Repository\RepositoryFactory::class,
+                Repository\RefreshTokenRepository::class => Repository\RepositoryFactory::class,
+                Repository\ScopeRepository::class => Repository\RepositoryFactory::class,
                 Repository\UserRepository::class => Repository\UserRepositoryFactory::class,
             ],
         ];

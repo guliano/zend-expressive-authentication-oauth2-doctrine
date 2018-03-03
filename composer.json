@@ -46,6 +46,10 @@
         "branch-alias": {
             "dev-master": "0.1.x-dev",
             "dev-release-1.0.0": "1.0.x-dev"
+        },
+        "zf": {
+            "component": "Zend\\Expressive\\Authentication\\OAuth2\\Doctrine",
+            "config-provider": "Zend\\Expressive\\Authentication\\OAuth2\\Doctrine\\ConfigProvider"
         }
     },
     "scripts": {
