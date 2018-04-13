@@ -43,7 +43,8 @@ class AuthCodeRepository extends AbstractRepository
     public function revokeAuthCode($codeId)
     {
         /** @var AuthCodeEntity $accessToken */
-        $authCode = $this->objectRepository->find($codeId)->setRevoked(true);
+        $authCode = $this->objectRepository->find($codeId);
+        $authCode->setRevoked(true);
         $this->objectManager->persist($authCode);
         $this->objectManager->flush();
     }
