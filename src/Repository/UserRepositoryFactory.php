@@ -39,7 +39,7 @@ class UserRepositoryFactory
             null === $config ||
             (
                 ! isset($config['doctrine']) ||
-                ! isset($config['doctrine']['user_entity_class'])
+                ! isset($config['doctrine']['user_class'])
             )
         ) {
             throw new Exception\InvalidConfigException(
@@ -49,8 +49,8 @@ class UserRepositoryFactory
 
         $repository = new UserRepository(
             $em,
-            $em->getRepository($config['doctrine']['user_entity_class']),
-            $config['doctrine']['user_entity_class']
+            $em->getRepository($config['doctrine']['user_class']),
+            $config['doctrine']['user_class']
         );
         $repository->setUsernameField($config['doctrine']['user_field'] ?? 'username');
 
