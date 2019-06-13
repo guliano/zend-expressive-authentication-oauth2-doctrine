@@ -14,7 +14,7 @@ use Zend\Expressive\Authentication\OAuth2\Entity\ClientEntity;
 class ClientRepository extends AbstractRepository
     implements ClientRepositoryInterface
 {
-    public function getClientEntity($clientIdentifier, $grantType, $clientSecret = null, $mustValidateSecret = true): ?ClientEntity
+    public function getClientEntity($clientIdentifier, $grantType = null, $clientSecret = null, $mustValidateSecret = true)
     {
         /** @var ClientEntity $client */
         $client = $this->objectRepository->find($clientIdentifier);

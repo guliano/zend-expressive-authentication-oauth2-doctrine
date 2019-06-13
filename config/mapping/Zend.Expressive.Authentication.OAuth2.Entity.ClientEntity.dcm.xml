@@ -10,7 +10,8 @@
         </lifecycle-callbacks>
         <id name="identifier" column="id" type="string" />
         <field name="name" column="name" type="string" nullable="true" />
-        <field name="userIdentifier" column="user_id" type="string" nullable="true" />
+        <!-- Should be added in model -->
+<!--        <field name="userId" column="user_id" type="string" nullable="true" />-->
         <field name="secret" column="secret" type="string" nullable="true" />
         <field name="redirectUri" column="redirect_uri" type="string" nullable="false" />
         <field name="personalAccessClient" column="personal_access_client" type="boolean" nullable="true" />
