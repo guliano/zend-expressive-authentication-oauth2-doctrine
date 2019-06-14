@@ -13,7 +13,7 @@ use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
-use Zend\Expressive\Authentication\OAuth2\Entity\AccessTokenEntity;
+use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\AccessTokenEntity;
 
 class AccessTokenRepository extends AbstractRepository
     implements AccessTokenRepositoryInterface

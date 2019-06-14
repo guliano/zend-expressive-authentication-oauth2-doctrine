@@ -9,7 +9,7 @@
 namespace Zend\Expressive\Authentication\OAuth2\Doctrine\Repository;
 
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
-use Zend\Expressive\Authentication\OAuth2\Entity\ClientEntity;
+use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\ClientEntity;
 
 class ClientRepository extends AbstractRepository
     implements ClientRepositoryInterface

@@ -14,7 +14,6 @@ use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
 use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
-use Zend\Expressive\Authentication\OAuth2\Entity as PdoEntity;
 use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity as DoctrineEntity;
 
 class ConfigProvider
@@ -59,11 +58,11 @@ class ConfigProvider
     public function getRepositoryMapping(): array
     {
         return [
-            Repository\AccessTokenRepository::class => PdoEntity\AccessTokenEntity::class,
-            Repository\AuthCodeRepository::class => PdoEntity\AuthCodeEntity::class,
-            Repository\ClientRepository::class => PdoEntity\ClientEntity::class,
-            Repository\RefreshTokenRepository::class => PdoEntity\RefreshTokenEntity::class,
-            Repository\ScopeRepository::class => PdoEntity\ScopeEntity::class,
+            Repository\AccessTokenRepository::class => DoctrineEntity\AccessTokenEntity::class,
+            Repository\AuthCodeRepository::class => DoctrineEntity\AuthCodeEntity::class,
+            Repository\ClientRepository::class => DoctrineEntity\ClientEntity::class,
+            Repository\RefreshTokenRepository::class => DoctrineEntity\RefreshTokenEntity::class,
+            Repository\ScopeRepository::class => DoctrineEntity\ScopeEntity::class,
             Repository\UserRepository::class => DoctrineEntity\UserEntity::class,
         ];
     }

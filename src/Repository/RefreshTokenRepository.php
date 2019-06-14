@@ -12,7 +12,7 @@ use Doctrine\ORM\ORMException;
 use League\OAuth2\Server\Entities\RefreshTokenEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
-use Zend\Expressive\Authentication\OAuth2\Entity\RefreshTokenEntity;
+use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\RefreshTokenEntity;
 
 class RefreshTokenRepository extends AbstractRepository
     implements RefreshTokenRepositoryInterface

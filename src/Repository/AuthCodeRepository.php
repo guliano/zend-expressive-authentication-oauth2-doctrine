@@ -12,7 +12,7 @@ use Doctrine\ORM\ORMException;
 use League\OAuth2\Server\Entities\AuthCodeEntityInterface;
 use League\OAuth2\Server\Exception\UniqueTokenIdentifierConstraintViolationException;
 use League\OAuth2\Server\Repositories\AuthCodeRepositoryInterface;
-use Zend\Expressive\Authentication\OAuth2\Entity\AuthCodeEntity;
+use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\AuthCodeEntity;
 
 class AuthCodeRepository extends AbstractRepository
     implements AuthCodeRepositoryInterface
