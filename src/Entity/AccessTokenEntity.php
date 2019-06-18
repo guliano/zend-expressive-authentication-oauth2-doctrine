@@ -14,10 +14,10 @@ use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\Traits\AccessTokenTrait;
 use League\OAuth2\Server\Entities\Traits\EntityTrait;
 use League\OAuth2\Server\Entities\Traits\TokenEntityTrait;
-use Zend\Expressive\Authentication\OAuth2\Entity\RevokableTrait;
 use Zend\Expressive\Authentication\OAuth2\Entity\TimestampableTrait;
 
 class AccessTokenEntity implements AccessTokenEntityInterface
 {
+
     use AccessTokenTrait, TokenEntityTrait, EntityTrait, RevokableTrait, TimestampableTrait;
 }

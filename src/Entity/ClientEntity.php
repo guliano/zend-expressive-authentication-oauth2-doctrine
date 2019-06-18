@@ -15,7 +15,6 @@ use League\OAuth2\Server\Entities\Traits\ClientTrait;
 use League\OAuth2\Server\Entities\Traits\EntityTrait;
 
 use function explode;
-use Zend\Expressive\Authentication\OAuth2\Entity\RevokableTrait;
 use Zend\Expressive\Authentication\OAuth2\Entity\TimestampableTrait;
 
 class ClientEntity implements ClientEntityInterface
