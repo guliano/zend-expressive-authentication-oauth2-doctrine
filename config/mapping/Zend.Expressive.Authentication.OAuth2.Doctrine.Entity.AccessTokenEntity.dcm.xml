@@ -13,7 +13,7 @@
         <field name="userIdentifier" column="user_id" type="string" nullable="true" />
         <field name="revoked" column="revoked" type="boolean" nullable="false">
             <options>
-                <option name="default">1</option>
+                <option name="default">0</option>
             </options>
         </field>
         <field name="createdAt" column="created_at" type="datetime" nullable="false" />

@@ -8,7 +8,11 @@
         <id name="identifier" column="id" type="string" />
         <many-to-one field="client" target-entity="Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\ClientEntity" />
         <field name="userIdentifier" column="user_id" type="string" />
-        <field name="revoked" column="revoked" type="boolean" nullable="false" />
+        <field name="revoked" column="revoked" type="boolean" nullable="false">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
         <field name="scopes" column="scopes" type="simple_array" nullable="true" />
         <field name="expiryDateTime" column="expires_at" type="datetime" nullable="false" />
     </entity>
