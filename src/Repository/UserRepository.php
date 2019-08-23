@@ -38,7 +38,7 @@ class UserRepository extends AbstractRepository
         if (! $user) {
             return null;
         }
-        $user->setIdentifier($user->getUsername());
+//        $user->setIdentifier($user->getUsername());
 
         return password_verify($password, $user->getPassword()) ? $user : null;
     }
