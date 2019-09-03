@@ -40,6 +40,11 @@ class UserEntity extends BaseUserEntity
      */
     protected $avatar;
 
+    /**
+     * @var bool
+     */
+    protected $isActive;
+
     public function getUsername(): string
     {
         return $this->username;
@@ -88,5 +93,21 @@ class UserEntity extends BaseUserEntity
     public function setAvatar(string $avatar): void
     {
         $this->avatar = $avatar;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsActive() : bool
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * @param bool $isActive
+     */
+    public function setIsActive(bool $isActive) : void
+    {
+        $this->isActive = $isActive;
     }
 }
