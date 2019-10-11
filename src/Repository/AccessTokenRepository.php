@@ -55,7 +55,8 @@ class AccessTokenRepository extends AbstractRepository
     public function revokeAccessToken($tokenId)
     {
         /** @var AccessTokenEntity $accessToken */
-        $accessToken = $this->objectRepository->find($tokenId)->setRevoked(true);
+        $accessToken = $this->objectRepository->find($tokenId);
+        $accessToken->setRevoked(true);
         $this->objectManager->persist($accessToken);
         $this->objectManager->flush();
     }

@@ -44,9 +44,10 @@ class RefreshTokenRepository extends AbstractRepository
      */
     public function revokeRefreshToken($tokenId)
     {
-        /** @var RefreshTokenEntity $accessToken */
-        $accessToken = $this->objectRepository->find($tokenId)->setRevoked(true);
-        $this->objectManager->persist($accessToken);
+        /** @var RefreshTokenEntity $refreshToken */
+        $refreshToken = $this->objectRepository->find($tokenId);
+        $refreshToken->setRevoked(true);
+        $this->objectManager->persist($refreshToken);
         $this->objectManager->flush();
     }
 
