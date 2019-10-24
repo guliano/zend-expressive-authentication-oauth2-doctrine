@@ -42,6 +42,11 @@ class ClientEntity implements ClientEntityInterface
     protected $passwordClient;
 
     /**
+     * @var bool
+     */
+    protected $customerArea;
+
+    /**
      * Constructor
      *
      * @param  string  $identifier
@@ -100,5 +105,21 @@ class ClientEntity implements ClientEntityInterface
     public function setPasswordClient(bool $passwordClient): void
     {
         $this->passwordClient = $passwordClient;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCustomerArea() : bool
+    {
+        return $this->customerArea;
+    }
+
+    /**
+     * @param bool $customerArea
+     */
+    public function setCustomerArea(bool $customerArea) : void
+    {
+        $this->customerArea = $customerArea;
     }
 }

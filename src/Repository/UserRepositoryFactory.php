@@ -47,12 +47,26 @@ class UserRepositoryFactory
             );
         }
 
+        if (
+            null === $config ||
+            (
+                ! isset($config['doctrine']) ||
+                ! isset($config['doctrine']['customer_account_class'])
+            )
+        ) {
+            throw new Exception\InvalidConfigException(
+                'The OAuth2 Doctrine configuration is missing'
+            );
+        }
+
         $repository = new UserRepository(
             $em,
             $em->getRepository($config['doctrine']['user_class']),
             $config['doctrine']['user_class']
         );
         $repository->setUsernameField($config['doctrine']['user_field'] ?? 'username');
+        $repository->setCustomerAccountClass($config['doctrine']['customer_account_class']);
+        $repository->setCustomerAccountFields($config['doctrine']['customer_account_fields'] ?? ['username']);
 
         return $repository;
     }

@@ -16,6 +16,7 @@
         <field name="redirectUri" column="redirect_uri" type="string" nullable="false" />
         <field name="personalAccessClient" column="personal_access_client" type="boolean" nullable="true" />
         <field name="passwordClient" column="password_client" type="boolean" nullable="true" />
+        <field name="customerArea" column="customer_area" type="boolean" nullable="true" />
         <field name="revoked" column="revoked" type="boolean" nullable="true">
             <options>
                 <option name="default">0</option>

@@ -8,6 +8,7 @@
 
 namespace Zend\Expressive\Authentication\OAuth2\Doctrine\Repository;
 
+use Auth\Entity\CustomerAccount;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 use Zend\Expressive\Authentication\OAuth2\Doctrine\Entity\UserEntity;
@@ -20,9 +21,29 @@ class UserRepository extends AbstractRepository
      */
     private $usernameField;
 
-    public function setUsernameField(string $usernameField): void
+    /**
+     * @var string
+     */
+    private $customerAccountClass;
+
+    /**
+     * @var array
+     */
+    private $customerAccountFields;
+
+    public function setUsernameField(string $usernameField) : void
     {
         $this->usernameField = $usernameField;
+    }
+
+    public function setCustomerAccountClass(string $className) : void
+    {
+        $this->customerAccountClass = $className;
+    }
+
+    public function setCustomerAccountFields(array $fields) : void
+    {
+        $this->customerAccountFields = $fields;
     }
 
     public function getUserEntityByUserCredentials(
@@ -30,12 +51,22 @@ class UserRepository extends AbstractRepository
         $password,
         $grantType,
         ClientEntityInterface $clientEntity
-    )
-    {
-        /** @var UserEntity $user */
-        $user = $this->objectRepository->findOneBy([$this->usernameField => $username]);
+    ) {
+        if ($clientEntity->hasCustomerArea()) {
+            $repository = $this->objectManager->getRepository($this->customerAccountClass);
+            foreach ($this->customerAccountFields as $field) {
+                $user = $repository->findOneBy([$field => $username]);
+                if ($user) {
+                    break;
+                }
+            }
 
-        if (! $user) {
+        } else {
+            /** @var UserEntity $user */
+            $user = $this->objectRepository->findOneBy([$this->usernameField => $username]);
+        }
+
+        if (!$user) {
             return null;
         }
 //        $user->setIdentifier($user->getUsername());
